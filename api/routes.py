@@ -6,7 +6,7 @@ import os
 import base64
 import hmac
 from datetime import datetime
-from app import db
+from .app import db
 from .models import User, Referral, Package, UserPackage, Payment
 from .paypal import create_paypal_order
 
