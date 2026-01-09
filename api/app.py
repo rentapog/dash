@@ -9,7 +9,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy(app)
 
-from routes import bp  # Import the Blueprint
+from .routes import bp  # Import the Blueprint
 app.register_blueprint(bp)  # Register the Blueprint
 
 @app.route('/')
