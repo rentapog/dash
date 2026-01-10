@@ -12,6 +12,29 @@ dist
 dist-ssr
 *.local
 
+# Build output
+dist/
+build/
+
+# Environment variables
+.env
+.env.*
+
+# Executables
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Misc
+Thumbs.db
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
