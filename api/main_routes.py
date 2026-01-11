@@ -1,3 +1,4 @@
+from flask import Blueprint
 import hmac
 from datetime import datetime
 from .extensions import db
