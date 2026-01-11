@@ -16,7 +16,7 @@ def create_app():
     @app.route('/')
     def index():
         paypal_client_id = os.getenv('PAYPAL_CLIENT_ID')
-        return render_template('packages.html', paypal_client_id=paypal_client_id)
+        return render_template('home.html', paypal_client_id=paypal_client_id)
 
     return app
 
