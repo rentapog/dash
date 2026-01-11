@@ -1,14 +1,3 @@
-# Route for /api-docs
-@bp.route('/api-docs')
-def api_docs():
-    return render_template('api_docs.html')
-
-from flask import Blueprint, session, redirect, url_for, render_template, request, jsonify, current_app
-import secrets
-import hashlib
-import requests
-import os
-import base64
 import hmac
 from datetime import datetime
 from extensions import db
@@ -16,6 +5,11 @@ from models import User, Referral, Package, UserPackage, Payment
 from paypal import create_paypal_order
 
 bp = Blueprint('main', __name__)
+
+# Route for /api-docs
+@bp.route('/api-docs')
+def api_docs():
+    return render_template('api_docs.html')
 # Route for /careers
 @bp.route('/careers')
 def careers():
