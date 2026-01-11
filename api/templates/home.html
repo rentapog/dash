@@ -1,32 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HostingPro | Get Paid Daily</title>
     <style>
-        body { background: #f8fafc; color: #222; font-family: 'Inter', 'Segoe UI', Arial, sans-serif; margin: 0; }
-        .navbar { background: #fff; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; padding: 0 32px; height: 64px; }
-        .navbar-logo { font-weight: bold; font-size: 1.5em; color: #e60000; display: flex; align-items: center; }
-        .navbar-links { margin-left: auto; display: flex; gap: 32px; }
-        .navbar-links a { color: #222; text-decoration: none; font-weight: 500; font-size: 1.1em; padding: 8px 0; }
-        .navbar-links a:hover { color: #e60000; }
-        .ticker-bar { background: #10182b; color: #fff; padding: 8px 0; display: flex; overflow-x: auto; white-space: nowrap; font-size: 1.1em; }
-        .ticker-item { display: inline-block; margin: 0 18px; background: #19213a; border-radius: 8px; padding: 4px 16px; font-weight: 600; }
-        .hero-section { display: flex; justify-content: space-between; align-items: flex-start; max-width: 1200px; margin: 48px auto 0 auto; padding: 0 32px; }
-        .hero-left { flex: 1; }
-        .hero-badge { background: #e6f9ef; color: #1db954; font-weight: 600; border-radius: 6px; display: inline-block; padding: 8px 18px; margin-bottom: 24px; font-size: 1em; }
-        .hero-title { font-size: 3.2em; font-weight: 800; color: #10182b; margin-bottom: 12px; line-height: 1.1; }
-        .hero-title .highlight { color: #e60000; }
-        .hero-desc { font-size: 1.3em; color: #444; margin-bottom: 32px; }
-        .hero-form-card { background: #fff; box-shadow: 0 8px 32px rgba(16,24,43,0.10); border-radius: 18px; padding: 36px 32px; width: 400px; max-width: 100%; margin-left: 48px; }
-        .form-badge { background: #ff4d4f; color: #fff; font-weight: 600; border-radius: 6px; display: inline-block; padding: 6px 16px; margin-bottom: 18px; font-size: 1em; }
-        .form-title { font-size: 1.5em; font-weight: 700; margin-bottom: 8px; color: #10182b; }
-        .form-desc { color: #444; margin-bottom: 18px; }
-        .form-label { font-weight: 600; margin-top: 12px; display: block; }
-        .form-input { width: 100%; padding: 10px; border-radius: 6px; border: 1.5px solid #e5e7eb; font-size: 1em; margin-bottom: 12px; }
-        .form-btn { width: 100%; background: #10182b; color: #fff; border: none; border-radius: 6px; padding: 14px; font-size: 1.1em; font-weight: bold; cursor: pointer; margin-top: 10px; }
-        .form-btn:hover { background: #e60000; }
+        body {
+            background: #f8fafc;
+            color: #222;
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+        }
+
+        .navbar {
+            background: #fff;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            padding: 0 32px;
+            height: 64px;
+        }
+
+        .navbar-logo {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #e60000;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-links {
+            margin-left: auto;
+            display: flex;
+            gap: 32px;
+        }
+
+        .navbar-links a {
+            color: #222;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1em;
+            padding: 8px 0;
+        }
+
+        .navbar-links a:hover {
+            color: #e60000;
+        }
+
+        .ticker-bar {
+            background: #10182b;
+            color: #fff;
+            padding: 8px 0;
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            font-size: 1.1em;
+        }
+
+        .ticker-item {
+            display: inline-block;
+            margin: 0 18px;
+            background: #19213a;
+            border-radius: 8px;
+            padding: 4px 16px;
+            font-weight: 600;
+        }
+
+        .hero-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 48px auto 0 auto;
+            padding: 0 32px;
+        }
+
+        .hero-left {
+            flex: 1;
+        }
+
+        .hero-badge {
+            background: #e6f9ef;
+            color: #1db954;
+            font-weight: 600;
+            border-radius: 6px;
+            display: inline-block;
+            padding: 8px 18px;
+            margin-bottom: 24px;
+            font-size: 1em;
+        }
+
+        .hero-title {
+            font-size: 3.2em;
+            font-weight: 800;
+            color: #10182b;
+            margin-bottom: 12px;
+            line-height: 1.1;
+        }
+
+        .hero-title .highlight {
+            color: #e60000;
+        }
+
+        .hero-desc {
+            font-size: 1.3em;
+            color: #444;
+            margin-bottom: 32px;
+        }
+
+        .hero-form-card {
+            background: #fff;
+            box-shadow: 0 8px 32px rgba(16, 24, 43, 0.10);
+            border-radius: 18px;
+            padding: 36px 32px;
+            width: 400px;
+            max-width: 100%;
+            margin-left: 48px;
+        }
+
+        .form-badge {
+            background: #ff4d4f;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 6px;
+            display: inline-block;
+            padding: 6px 16px;
+            margin-bottom: 18px;
+            font-size: 1em;
+        }
+
+        .form-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #10182b;
+        }
+
+        .form-desc {
+            color: #444;
+            margin-bottom: 18px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            margin-top: 12px;
+            display: block;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1.5px solid #e5e7eb;
+            font-size: 1em;
+            margin-bottom: 12px;
+        }
+
+        .form-btn {
+            width: 100%;
+            background: #10182b;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 14px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .form-btn:hover {
+            background: #e60000;
+        }
+
         .packages-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -35,10 +182,11 @@
             margin: 70px auto 70px auto;
             padding: 0 32px;
         }
+
         .package-card {
             background: linear-gradient(135deg, #fff 80%, #f7f7ff 100%);
             border-radius: 24px;
-            box-shadow: 0 8px 32px rgba(0, 31, 91, 0.18), 0 2px 8px rgba(230,0,0,0.08);
+            box-shadow: 0 8px 32px rgba(0, 31, 91, 0.18), 0 2px 8px rgba(230, 0, 0, 0.08);
             border: 3.5px solid #e60000;
             padding: 44px 32px 38px 32px;
             text-align: center;
@@ -46,11 +194,13 @@
             transition: transform 0.35s, box-shadow 0.35s;
             margin-bottom: 24px;
         }
+
         .package-card:hover {
             transform: translateY(-16px) scale(1.03);
-            box-shadow: 0 16px 48px rgba(0, 31, 91, 0.22), 0 4px 16px rgba(230,0,0,0.12);
+            box-shadow: 0 16px 48px rgba(0, 31, 91, 0.22), 0 4px 16px rgba(230, 0, 0, 0.12);
             z-index: 2;
         }
+
         .package-card .badge {
             position: absolute;
             top: -22px;
@@ -64,23 +214,27 @@
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
             border: 2px solid #e60000;
         }
+
         .package-card h3 {
             font-size: 2.2em;
             color: #001f5b;
             margin-bottom: 18px;
             letter-spacing: 1px;
         }
+
         .package-card ul {
             list-style: none;
             padding: 0;
             margin: 32px 0 0 0;
             text-align: left;
         }
+
         .package-card li {
             padding: 14px 0;
             border-bottom: 1.5px solid #f2f2f2;
             font-size: 1.08em;
         }
+
         .package-card li:before {
             content: "✓ ";
             color: #e60000;
@@ -88,45 +242,62 @@
             margin-right: 10px;
             font-size: 1.1em;
         }
+
         .footer {
-            background: linear-gradient(90deg, #e60000 0%, #fff 50%, #001f5b 100%);
-            color: #001f5b;
+            background: #101010;
+            color: #fff;
             padding: 38px 0 18px 0;
             margin-top: 60px;
         }
+        .footer, .footer a, .footer-section h5, .footer p, .footer span, .footer-copyright {
+            color: #fff !important;
+            font-weight: bold;
+            text-shadow: 0 1px 4px #000;
+        }
+        .footer a:hover {
+            color: #e60000;
+        }
+
         .footer-links {
             display: flex;
             justify-content: center;
             gap: 80px;
             margin-bottom: 18px;
         }
+
         .footer-section {
             min-width: 180px;
         }
+
         .footer-section h5 {
             color: #e60000;
             font-size: 1.1em;
             margin-bottom: 10px;
         }
+
         .footer-section a {
             color: #001f5b;
             text-decoration: underline;
             display: block;
             margin-bottom: 6px;
         }
+
         .footer-section a:hover {
             color: #e60000;
         }
+
         .footer-copyright {
             text-align: center;
-            color: #001f5b;
+            color: #fff;
             font-size: 0.98em;
         }
+
         .section {
             max-width: 1200px;
             margin: 60px auto 0 auto;
             padding: 0 32px;
         }
+
         .section-title {
             text-align: center;
             font-size: 2.2em;
@@ -134,12 +305,14 @@
             color: #10182b;
             margin-bottom: 10px;
         }
+
         .section-subtitle {
             text-align: center;
             font-size: 1.2em;
             color: #444;
             margin-bottom: 36px;
         }
+
         .steps-grid {
             display: flex;
             gap: 32px;
@@ -147,31 +320,36 @@
             flex-wrap: wrap;
             margin-bottom: 48px;
         }
+
         .step-card {
             background: #fff;
             border-radius: 18px;
-            box-shadow: 0 4px 24px rgba(16,24,43,0.08);
+            box-shadow: 0 4px 24px rgba(16, 24, 43, 0.08);
             padding: 32px 28px;
             flex: 1 1 280px;
             min-width: 260px;
             max-width: 340px;
             text-align: center;
         }
+
         .step-icon {
             font-size: 2.2em;
             margin-bottom: 12px;
             color: #1db954;
         }
+
         .step-title {
             font-size: 1.25em;
             font-weight: 700;
             color: #10182b;
             margin-bottom: 8px;
         }
+
         .step-desc {
             color: #444;
             font-size: 1.05em;
         }
+
         .benefits-grid {
             display: flex;
             gap: 32px;
@@ -179,10 +357,11 @@
             flex-wrap: wrap;
             margin-top: 32px;
         }
+
         .benefit-card {
             background: #e6f9ef;
             border-radius: 16px;
-            box-shadow: 0 2px 12px rgba(16,24,43,0.06);
+            box-shadow: 0 2px 12px rgba(16, 24, 43, 0.06);
             padding: 28px 24px;
             flex: 1 1 260px;
             min-width: 220px;
@@ -190,27 +369,47 @@
             text-align: center;
             color: #10182b;
         }
+
         .benefit-title {
             font-size: 1.1em;
             font-weight: 700;
             margin-bottom: 8px;
             color: #1db954;
         }
+
         .benefit-desc {
             font-size: 1em;
             color: #444;
         }
+
         @media (max-width: 900px) {
-            .hero-section { flex-direction: column; align-items: stretch; }
-            .hero-form-card { margin-left: 0; margin-top: 32px; }
-            .packages-grid { grid-template-columns: 1fr; }
-            .steps-grid, .benefits-grid { flex-direction: column; gap: 24px; }
+            .hero-section {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-form-card {
+                margin-left: 0;
+                margin-top: 32px;
+            }
+
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-grid,
+            .benefits-grid {
+                flex-direction: column;
+                gap: 24px;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="navbar">
-        <span class="navbar-logo"> <img src="https://img.icons8.com/ios-filled/50/e60000/record.png" alt="logo" style="height:28px;vertical-align:middle;margin-right:8px;"> HostingPro</span>
+        <span class="navbar-logo"> <img src="https://img.icons8.com/ios-filled/50/e60000/record.png" alt="logo"
+                style="height:28px;vertical-align:middle;margin-right:8px;"> HostingPro</span>
         <div class="navbar-links">
             <a href="/">Home</a>
             <a href="/how-it-works">How It Works</a>
@@ -243,13 +442,16 @@
         <div class="hero-left">
             <div class="hero-badge">RentAPog - No Risk, Cancel Anytime</div>
             <div class="hero-title">Rent A Pog.<br><span class="highlight">Get Paid Daily.</span></div>
-            <div class="hero-desc">The world's first daily-pay pog rental platform. Earn daily, withdraw instantly, no risk, cancel anytime!</div>
+            <div class="hero-desc">The world's first daily-pay pog rental platform. Earn daily, withdraw instantly, no
+                risk, cancel anytime!</div>
         </div>
         <div class="hero-form-card">
             <div class="form-badge">Limited Time</div>
             <div class="form-title">Start Earning Daily</div>
             <div class="form-desc">Get your affiliate link and start earning immediately.</div>
-            <div style="background:#f5f7fa;border-radius:6px;padding:8px 12px;margin-bottom:12px;color:#1976d2;font-size:0.98em;">Referred by: <a href="#" style="color:#1976d2;text-decoration:underline;">rentapog</a></div>
+            <div
+                style="background:#f5f7fa;border-radius:6px;padding:8px 12px;margin-bottom:12px;color:#1976d2;font-size:0.98em;">
+                Referred by: <a href="#" style="color:#1976d2;text-decoration:underline;">rentapog</a></div>
             <form>
                 <label class="form-label">Your First Name</label>
                 <input class="form-input" type="text" placeholder="John">
@@ -257,80 +459,100 @@
                 <input class="form-input" type="email" placeholder="you@example.com">
                 <button class="form-btn" type="submit">Create Account &amp; Get My Affiliate Link</button>
             </form>
-            <div style="margin-top:10px;font-size:0.95em;color:#888;">No credit card required. Start earning instantly.</div>
+            <div style="margin-top:10px;font-size:0.95em;color:#888;">No credit card required. Start earning instantly.
+            </div>
         </div>
     </div>
 
-        <!-- Passive Income Steps Section -->
-        <div class="section">
-            <div class="section-title">Your Path to Passive Income</div>
-            <div class="section-subtitle">Get started in minutes. Earn every single day. It's that simple.</div>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-icon">1️⃣</div>
-                    <div class="step-title">Select Your Pog</div>
-                    <div class="step-desc">Choose your preferred rental package and activate your account. No risk, cancel anytime.</div>
-                </div>
-                <div class="step-card">
-                    <div class="step-icon">2️⃣</div>
-                    <div class="step-title">Earn Daily</div>
-                    <div class="step-desc">Share your affiliate link and earn daily payouts for every active referral. Withdraw instantly, no waiting.</div>
-                </div>
-                <div class="step-card">
-                    <div class="step-icon">3️⃣</div>
-                    <div class="step-title">Scale & Grow</div>
-                    <div class="step-desc">Upgrade your package, refer more users, and unlock even bigger rewards. The more you grow, the more you earn!</div>
-                </div>
+    <!-- Passive Income Steps Section -->
+    <div class="section">
+        <div class="section-title">Your Path to Passive Income</div>
+        <div class="section-subtitle">Get started in minutes. Earn every single day. It's that simple.</div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-icon">1️⃣</div>
+                <div class="step-title">Select Your Pog</div>
+                <div class="step-desc">Choose your preferred rental package and activate your account. No risk, cancel
+                    anytime.</div>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">2️⃣</div>
+                <div class="step-title">Earn Daily</div>
+                <div class="step-desc">Share your affiliate link and earn daily payouts for every active referral.
+                    Withdraw instantly, no waiting.</div>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">3️⃣</div>
+                <div class="step-title">Scale & Grow</div>
+                <div class="step-desc">Upgrade your package, refer more users, and unlock even bigger rewards. The more
+                    you grow, the more you earn!</div>
             </div>
         </div>
+    </div>
 
-        <!-- Benefits/Info Cards Section (no trial references) -->
-        <div class="section">
-            <div class="section-title" style="color:#1db954;">Why Choose HostingPro?</div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-title">Instant Daily Payouts</div>
-                    <div class="benefit-desc">Get paid every single day for your active referrals. Withdraw your earnings instantly, anytime.</div>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-title">No Long-Term Contracts</div>
-                    <div class="benefit-desc">Stay as long as you like. Cancel anytime—no hidden fees, no penalties, just pure earning power.</div>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-title">Fair Pay for Success</div>
-                    <div class="benefit-desc">You keep 100% of your daily earnings after your first 3 referrals. Our system is designed for your long-term success.</div>
-                </div>
+    <!-- Benefits/Info Cards Section (no trial references) -->
+    <div class="section">
+        <div class="section-title" style="color:#1db954;">Why Choose HostingPro?</div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-title">Instant Daily Payouts</div>
+                <div class="benefit-desc">Get paid every single day for your active referrals. Withdraw your earnings
+                    instantly, anytime.</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-title">No Long-Term Contracts</div>
+                <div class="benefit-desc">Stay as long as you like. Cancel anytime—no hidden fees, no penalties, just
+                    pure earning power.</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-title">Fair Pay for Success</div>
+                <div class="benefit-desc">You keep 100% of your daily earnings after your first 3 referrals. Our system
+                    is designed for your long-term success.</div>
             </div>
         </div>
+    </div>
 
-        <!-- Blog Posts Section (moved up) -->
-        <div class="section">
-            <div class="section-title">Latest Blog Posts</div>
-            <div class="section-subtitle">Tips, strategies, and insights to help you maximize your earnings</div>
-            <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
-                <div style="background:#fff;border-radius:16px;box-shadow:0 2px 12px rgba(16,24,43,0.08);padding:28px 24px;min-width:260px;max-width:340px;flex:1 1 260px;">
-                    <div style="font-size:0.95em;color:#1db954;font-weight:600;margin-bottom:6px;">Guide &nbsp;|&nbsp; Dec 1, 2025</div>
-                    <div style="font-size:1.15em;font-weight:700;margin-bottom:10px;">Getting Started with Daily Payouts</div>
-                    <div style="color:#444;font-size:1em;margin-bottom:12px;">Learn how to maximize your earnings with our daily payout system and get paid instantly.</div>
-                    <a href="#" style="color:#1976d2;text-decoration:underline;font-size:0.98em;">Read More &rarr;</a>
+    <!-- Blog Posts Section (moved up) -->
+    <div class="section">
+        <div class="section-title">Latest Blog Posts</div>
+        <div class="section-subtitle">Tips, strategies, and insights to help you maximize your earnings</div>
+        <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+            <div
+                style="background:#fff;border-radius:16px;box-shadow:0 2px 12px rgba(16,24,43,0.08);padding:28px 24px;min-width:260px;max-width:340px;flex:1 1 260px;">
+                <div style="font-size:0.95em;color:#1db954;font-weight:600;margin-bottom:6px;">Guide &nbsp;|&nbsp; Dec
+                    1, 2025</div>
+                <div style="font-size:1.15em;font-weight:700;margin-bottom:10px;">Getting Started with Daily Payouts
                 </div>
-                <div style="background:#fff;border-radius:16px;box-shadow:0 2px 12px rgba(16,24,43,0.08);padding:28px 24px;min-width:260px;max-width:340px;flex:1 1 260px;">
-                    <div style="font-size:0.95em;color:#ffb300;font-weight:600;margin-bottom:6px;">Education &nbsp;|&nbsp; Nov 28, 2025</div>
-                    <div style="font-size:1.15em;font-weight:700;margin-bottom:10px;">Understanding the Fair Affiliate System</div>
-                    <div style="color:#444;font-size:1em;margin-bottom:12px;">How our 2nd sale pay-up keeps the platform sustainable for everyone.</div>
-                    <a href="#" style="color:#1976d2;text-decoration:underline;font-size:0.98em;">Read More &rarr;</a>
-                </div>
-                <div style="background:#fff;border-radius:16px;box-shadow:0 2px 12px rgba(16,24,43,0.08);padding:28px 24px;min-width:260px;max-width:340px;flex:1 1 260px;">
-                    <div style="font-size:0.95em;color:#1976d2;font-weight:600;margin-bottom:6px;">Strategy &nbsp;|&nbsp; Nov 25, 2025</div>
-                    <div style="font-size:1.15em;font-weight:700;margin-bottom:10px;">Top Strategies for Affiliate Success</div>
-                    <div style="color:#444;font-size:1em;margin-bottom:12px;">Tips from top earners on how to scale your referral income.</div>
-                    <a href="#" style="color:#1976d2;text-decoration:underline;font-size:0.98em;">Read More &rarr;</a>
-                </div>
+                <div style="color:#444;font-size:1em;margin-bottom:12px;">Learn how to maximize your earnings with our
+                    daily payout system and get paid instantly.</div>
+                <a href="#" style="color:#1976d2;text-decoration:underline;font-size:0.98em;">Read More &rarr;</a>
             </div>
-            <div style="text-align:center;margin-top:10px;">
-                <a href="#" style="color:#10182b;font-weight:600;text-decoration:underline;font-size:1.05em;">View All Articles &rarr;</a>
+            <div
+                style="background:#fff;border-radius:16px;box-shadow:0 2px 12px rgba(16,24,43,0.08);padding:28px 24px;min-width:260px;max-width:340px;flex:1 1 260px;">
+                <div style="font-size:0.95em;color:#ffb300;font-weight:600;margin-bottom:6px;">Education &nbsp;|&nbsp;
+                    Nov 28, 2025</div>
+                <div style="font-size:1.15em;font-weight:700;margin-bottom:10px;">Understanding the Fair Affiliate
+                    System</div>
+                <div style="color:#444;font-size:1em;margin-bottom:12px;">How our 2nd sale pay-up keeps the platform
+                    sustainable for everyone.</div>
+                <a href="#" style="color:#1976d2;text-decoration:underline;font-size:0.98em;">Read More &rarr;</a>
+            </div>
+            <div
+                style="background:#fff;border-radius:16px;box-shadow:0 2px 12px rgba(16,24,43,0.08);padding:28px 24px;min-width:260px;max-width:340px;flex:1 1 260px;">
+                <div style="font-size:0.95em;color:#1976d2;font-weight:600;margin-bottom:6px;">Strategy &nbsp;|&nbsp;
+                    Nov 25, 2025</div>
+                <div style="font-size:1.15em;font-weight:700;margin-bottom:10px;">Top Strategies for Affiliate Success
+                </div>
+                <div style="color:#444;font-size:1em;margin-bottom:12px;">Tips from top earners on how to scale your
+                    referral income.</div>
+                <a href="#" style="color:#1976d2;text-decoration:underline;font-size:0.98em;">Read More &rarr;</a>
             </div>
         </div>
+        <div style="text-align:center;margin-top:10px;">
+            <a href="#" style="color:#10182b;font-weight:600;text-decoration:underline;font-size:1.05em;">View All
+                Articles &rarr;</a>
+        </div>
+    </div>
     <div class="packages-grid">
         <div class="package-card">
             <div class="badge">Starter</div>
@@ -434,4 +656,5 @@
         </div>
     </div>
 </body>
+
 </html>
