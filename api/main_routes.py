@@ -41,7 +41,7 @@ import hmac
 from datetime import datetime
 from .extensions import db
 from .models import User, Referral, Package, UserPackage, Payment
-from paypal import create_paypal_order
+from .paypal import create_paypal_order
 
 bp = Blueprint('main', __name__)
 
@@ -109,7 +109,7 @@ import hmac
 from datetime import datetime
 from .extensions import db
 from .models import User, Referral, Package, UserPackage, Payment
-from paypal import create_paypal_order
+from .paypal import create_paypal_order
 
 bp = Blueprint('main', __name__)
 
