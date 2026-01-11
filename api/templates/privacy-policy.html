@@ -2,28 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Privacy Policy | Rent a Pog Hosting</title>
+    <title>Privacy Policy | HostingPro</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; color: #222; margin: 0; padding: 0; }
-        .container { max-width: 900px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.10); padding: 40px; border: 3px solid #1a237e; }
-        h1, h2 { color: #d32f2f; }
-        h1 { font-size: 2.5em; margin-bottom: 18px; }
-        h2 { font-size: 1.5em; margin-top: 32px; }
+        body { background: #f8fafc; color: #222; font-family: 'Inter', 'Segoe UI', Arial, sans-serif; margin: 0; }
+        .container { max-width: 900px; margin: 48px auto 48px auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(16,24,43,0.10); padding: 48px 40px; border: 3.5px solid #e60000; }
+        h1 { color: #e60000; font-size: 2.5em; font-weight: 800; margin-bottom: 18px; }
+        h2 { color: #10182b; font-size: 1.5em; font-weight: 700; margin-top: 32px; }
         ul, ol { margin: 18px 0 32px 32px; }
         .section { margin-bottom: 36px; }
-        .nav { background: #1976d2; padding: 16px 0; text-align: center; }
-        .nav a { color: #fff; margin: 0 18px; font-weight: bold; text-decoration: none; font-size: 1.1em; }
-        .nav a:hover { color: #d32f2f; }
-        footer { background: #d32f2f; color: #fff; text-align: center; padding: 18px 0; margin-top: 40px; font-size: 1.1em; }
+        a { color: #1976d2; text-decoration: underline; }
+        a:hover { color: #e60000; }
+        .footer {
+            background: #101010;
+            color: #fff;
+            padding: 38px 0 18px 0;
+            margin-top: 60px;
+        }
+        .footer, .footer a, .footer-section h5, .footer p, .footer span, .footer-copyright {
+            color: #fff !important;
+            font-weight: bold;
+            text-shadow: 0 1px 4px #000;
+        }
+        .footer a:hover {
+            color: #e60000;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-bottom: 18px;
+        }
+        .footer-section {
+            min-width: 180px;
+        }
+        .footer-section h5 {
+            color: #e60000;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .footer-section a {
+            color: #fff !important;
+            text-decoration: underline;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .footer-section a:hover {
+            color: #e60000;
+        }
+        .footer-copyright {
+            text-align: center;
+            color: #fff;
+            font-size: 0.98em;
+        }
     </style>
 </head>
 <body>
-    <div class="nav">
-        <a href="/">Home</a>
-        <a href="/hosting">Hosting Plans</a>
-        <a href="/affiliate_program">Affiliate Program</a>
-        <a href="/contact">Contact</a>
-    </div>
     <div class="container">
         <h1>Privacy Policy</h1>
         <p>Effective Date: January 10, 2026</p>
@@ -96,22 +129,30 @@
             <p>If you have questions or concerns about this Privacy Policy, please contact us at <a href="mailto:support@rentapog.com">support@rentapog.com</a>.</p>
         </div>
     </div>
-    <footer>
-        <div style="max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:48px;">
-            <div>
-                <h5 style="color:#fff;">Legal</h5>
-                <a href="/privacy-policy" style="color:#fff;text-decoration:underline;">Privacy Policy</a>
-                <a href="/terms" style="color:#fff;text-decoration:underline;">Terms & Conditions</a>
-                <a href="/earnings-disclaimer" style="color:#fff;text-decoration:underline;">Earnings Disclaimer</a>
-                <a href="/user-agreement" style="color:#fff;text-decoration:underline;">User Agreement</a>
-                <a href="/cookie-policy" style="color:#fff;text-decoration:underline;">Cookie Policy</a>
+    <div class="footer">
+        <div class="footer-links">
+            <div class="footer-section">
+                <h5>Product</h5>
+                <a href="/packages">Hosting Packages</a>
+                <a href="/api-docs">API Docs</a>
+                <a href="/affiliate-program">Affiliate Program</a>
             </div>
-            <div>
-                <h5 style="color:#fff;">Account</h5>
-                <a href="/login" style="color:#fff;text-decoration:underline;">Login</a>
+            <div class="footer-section">
+                <h5>Company</h5>
+                <a href="/blog">Blog</a>
+                <a href="mailto:support@seobrainai.com">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h5>Legal</h5>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/user-agreement">User Agreement</a>
+                <a href="/cookie-policy">Cookie Policy</a>
             </div>
         </div>
-        <div style="margin-top:18px;">&copy; 2026 Rent a Pog Hosting. Red, White & Blue. All rights reserved.</div>
-    </footer>
+        <div class="footer-copyright">
+            &copy; 2026 HostingPro. All rights reserved.
+        </div>
+    </div>
 </body>
 </html>

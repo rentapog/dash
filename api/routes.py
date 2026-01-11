@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, jsonify
-from .paypal import create_paypal_order
+from paypal import create_paypal_order
 import os
 
 main = Blueprint('main', __name__)

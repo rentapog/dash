@@ -1,92 +1,142 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Rent a Pog Affiliate Program</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Program | HostingPro</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; color: #222; margin: 0; padding: 0; }
-        .container { max-width: 900px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.10); padding: 40px; border: 3px solid #1a237e; }
-        h1, h2, h3 { color: #d32f2f; }
-        h1 { font-size: 2.5em; margin-bottom: 18px; }
-        h2 { font-size: 1.5em; margin-top: 32px; }
-        .cta { background: linear-gradient(90deg, #d32f2f 0%, #1976d2 100%); color: #fff; padding: 20px 40px; border-radius: 10px; font-size: 1.3em; text-align: center; margin: 36px 0; text-decoration: none; display: inline-block; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: background 0.2s; }
-        .cta:hover { background: linear-gradient(90deg, #1976d2 0%, #d32f2f 100%); }
-        ul, ol { margin: 18px 0 32px 32px; }
-        .section { margin-bottom: 36px; }
-        .highlight { color: #1976d2; font-weight: bold; }
-        .feature-img { width: 100%; max-width: 600px; border-radius: 10px; margin: 24px auto; display: block; box-shadow: 0 2px 8px rgba(0,0,0,0.10); }
-        .success-block { background: #e3f2fd; border-left: 6px solid #d32f2f; padding: 18px 24px; margin-bottom: 18px; border-radius: 8px; color: #222; }
-        .nav { background: #1976d2; padding: 16px 0; text-align: center; }
-        .nav a { color: #fff; margin: 0 18px; font-weight: bold; text-decoration: none; font-size: 1.1em; }
-        .nav a:hover { color: #d32f2f; }
-        footer { background: #d32f2f; color: #fff; text-align: center; padding: 18px 0; margin-top: 40px; font-size: 1.1em; }
+        body { background: #f8fafc; color: #222; font-family: 'Inter', 'Segoe UI', Arial, sans-serif; margin: 0; }
+        .navbar { background: #fff; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; padding: 0 32px; height: 64px; }
+        .navbar-logo { font-weight: bold; font-size: 1.5em; color: #e60000; display: flex; align-items: center; }
+        .navbar-links { margin-left: auto; display: flex; gap: 32px; }
+        .navbar-links a { color: #222; text-decoration: none; font-weight: 500; font-size: 1.1em; padding: 8px 0; }
+        .navbar-links a:hover { color: #e60000; }
+        .hero-section { display: flex; flex-direction: column; align-items: center; justify-content: center; max-width: 900px; margin: 48px auto 0 auto; padding: 0 32px; }
+        .hero-badge { background: #e6f9ef; color: #1db954; font-weight: 600; border-radius: 6px; display: inline-block; padding: 8px 18px; margin-bottom: 24px; font-size: 1em; }
+        .hero-title { font-size: 2.8em; font-weight: 800; color: #10182b; margin-bottom: 12px; line-height: 1.1; text-align: center; }
+        .hero-title .highlight { color: #e60000; }
+        .hero-desc { font-size: 1.3em; color: #444; margin-bottom: 32px; text-align: center; }
+        .section { max-width: 900px; margin: 60px auto 0 auto; padding: 0 32px; }
+        .section-title { text-align: center; font-size: 2.2em; font-weight: 800; color: #10182b; margin-bottom: 10px; }
+        .section-subtitle { text-align: center; font-size: 1.2em; color: #444; margin-bottom: 36px; }
+        .steps-grid { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+        .step-card { background: #fff; border-radius: 18px; box-shadow: 0 4px 24px rgba(16,24,43,0.08); padding: 32px 28px; flex: 1 1 280px; min-width: 260px; max-width: 340px; text-align: center; }
+        .step-icon { font-size: 2.2em; margin-bottom: 12px; color: #1db954; }
+        .step-title { font-size: 1.25em; font-weight: 700; color: #10182b; margin-bottom: 8px; }
+        .step-desc { color: #444; font-size: 1.05em; }
+        .benefits-grid { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
+        .benefit-card { background: #e6f9ef; border-radius: 16px; box-shadow: 0 2px 12px rgba(16,24,43,0.06); padding: 28px 24px; flex: 1 1 260px; min-width: 220px; max-width: 340px; text-align: center; color: #10182b; }
+        .benefit-title { font-size: 1.1em; font-weight: 700; margin-bottom: 8px; color: #1db954; }
+        .benefit-desc { font-size: 1em; color: #444; }
+        @media (max-width: 900px) { .hero-section { flex-direction: column; align-items: stretch; } .steps-grid, .benefits-grid { flex-direction: column; gap: 24px; } }
+        .footer { background: #101010; color: #fff; padding: 38px 0 18px 0; margin-top: 60px; }
+        .footer, .footer a, .footer-section h5, .footer p, .footer span, .footer-copyright {
+            color: #fff !important;
+            font-weight: bold;
+            text-shadow: 0 1px 4px #000;
+        }
+        .footer a:hover { color: #e60000; }
+        .footer-links { display: flex; justify-content: center; gap: 80px; margin-bottom: 18px; }
+        .footer-section { min-width: 180px; }
+        .footer-section h5 { color: #e60000; font-size: 1.1em; margin-bottom: 10px; }
+        .footer-section a { color: #001f5b; text-decoration: underline; display: block; margin-bottom: 6px; }
+        .footer-section a:hover { color: #e60000; }
+        .footer-copyright { text-align: center; color: #fff; font-size: 0.98em; }
     </style>
 </head>
-
 <body>
-    <div class="nav">
-        <a href="/">Home</a>
-        <a href="/hosting">Hosting Plans</a>
-        <a href="/affiliate_program">Affiliate Program</a>
-        <a href="/contact">Contact</a>
-    </div>
-    <div class="container">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Modern Hosting" class="feature-img">
-        <h1>Rent a Pog Affiliate Program</h1>
-        <p class="highlight">Welcome to the <span style="color:#d32f2f;font-weight:bold;">#1 Hosting Affiliate Program</span>! Help people get blazing-fast, secure hosting space—and earn <span style="color:#1976d2;font-weight:bold;">daily commissions</span> for every customer you refer.</p>
-
-        <div class="section">
-            <h2>Why Choose Rent a Pog?</h2>
-            <ul>
-                <li><strong>Red, White & Blue Reliability:</strong> Our servers are fast, secure, and always online—your customers get the best!</li>
-                <li><strong>Flexible Hosting:</strong> Rent exactly the space you need, from small blogs to massive e-commerce stores.</li>
-                <li><strong>Instant Setup:</strong> Get your site online in minutes, not hours.</li>
-                <li><strong>24/7 Support:</strong> Our expert team is here for you and your referrals, day or night.</li>
-                <li><strong>Gorgeous Control Panel:</strong> Manage everything with ease and style.</li>
-            </ul>
-            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" alt="Server Room" class="feature-img">
-        </div>
-
-        <div class="section">
-            <h2>How Our Affiliate Program Works</h2>
-            <ol>
-                <li><strong>Sign Up:</strong> Create your free account and get your unique affiliate link.</li>
-                <li><strong>Share:</strong> Promote your link anywhere—social media, blogs, YouTube, or directly to friends.</li>
-                <li><strong>Earn:</strong> For every paid hosting signup, you get <span class="highlight">instant commission</span>. Plus, earn extra from your referrals' referrals with our viral pass-up system!</li>
-                <li><strong>Get Paid:</strong> Payments are sent <span class="highlight">daily</span> to your PayPal account. No delays, no hassle.</li>
-            </ol>
-        </div>
-
-        <div class="section">
-            <h2>Affiliate Success Stories</h2>
-            <div class="success-block">“I started sharing my link and made $300 in my first week! The hosting is top-notch and my friends love it.”<br><span style="font-size:0.95em;">— Taylor, Hosting Affiliate</span></div>
-            <div class="success-block">“Rent a Pog’s dashboard is beautiful and makes tracking my earnings easy. The daily payouts are a game changer!”<br><span style="font-size:0.95em;">— Morgan, Web Entrepreneur</span></div>
-        </div>
-
-        <div class="section">
-            <h2>Ready to Get Started?</h2>
-            <a href="/register" class="cta">Become an Affiliate Now</a>
-            <p style="margin-top:16px;">Questions? <a href="/contact" style="color:#1976d2;">Contact our affiliate team</a> for help!</p>
+    <div class="navbar">
+        <span class="navbar-logo"> <img src="https://img.icons8.com/ios-filled/50/e60000/record.png" alt="logo" style="height:28px;vertical-align:middle;margin-right:8px;"> HostingPro</span>
+        <div class="navbar-links">
+            <a href="/">Home</a>
+            <a href="/how-it-works">How It Works</a>
+            <a href="/affiliate-program">Affiliate Program</a>
         </div>
     </div>
-    <footer>
-        <div style="max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:48px;">
-            <div>
-                <h5 style="color:#fff;">Legal</h5>
-                <a href="/privacy-policy" style="color:#fff;text-decoration:underline;">Privacy Policy</a>
-                <a href="/terms" style="color:#fff;text-decoration:underline;">Terms & Conditions</a>
-                <a href="/earnings-disclaimer" style="color:#fff;text-decoration:underline;">Earnings Disclaimer</a>
-                <a href="/user-agreement" style="color:#fff;text-decoration:underline;">User Agreement</a>
-                <a href="/cookie-policy" style="color:#fff;text-decoration:underline;">Cookie Policy</a>
+    <div class="hero-section">
+        <div class="hero-badge">Earn More. Every Day.</div>
+        <div class="hero-title">The <span class="highlight">Affiliate Program</span> That Pays You Daily</div>
+        <div class="hero-desc">Welcome to the HostingPro Affiliate Program—where your network is your net worth. Unlock daily payouts, instant withdrawals, and a platform designed for your long-term success. No risk, no waiting, just pure earning power.</div>
+    </div>
+    <div class="section">
+        <div class="section-title">How It Works</div>
+        <div class="section-subtitle">Start earning in 3 simple steps</div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-icon">1️⃣</div>
+                <div class="step-title">Sign Up & Get Your Link</div>
+                <div class="step-desc">Create your free account and receive a unique affiliate link instantly. No approval process, no waiting.</div>
             </div>
-            <div>
-                <h5 style="color:#fff;">Account</h5>
-                <a href="/login" style="color:#fff;text-decoration:underline;">Login</a>
+            <div class="step-card">
+                <div class="step-icon">2️⃣</div>
+                <div class="step-title">Share & Refer</div>
+                <div class="step-desc">Share your link with friends, followers, or your audience. Every new user who signs up and activates a package through your link counts as your referral.</div>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">3️⃣</div>
+                <div class="step-title">Earn Daily Payouts</div>
+                <div class="step-desc">Once you have 3 active referrals, you unlock daily payouts. Withdraw your earnings instantly—no minimums, no delays.</div>
             </div>
         </div>
-        <div style="margin-top:18px;">&copy; 2026 Rent a Pog Hosting. Red, White & Blue. All rights reserved.</div>
-    </footer>
+    </div>
+    <div class="section">
+        <div class="section-title" style="color:#1db954;">Why Join Our Affiliate Program?</div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-title">Daily Instant Payouts</div>
+                <div class="benefit-desc">No more waiting for monthly commissions. Get paid every single day for your active referrals.</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-title">No Risk, No Upfront Fees</div>
+                <div class="benefit-desc">You only start paying for your package after you have 3 active referrals. Earn before you pay!</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-title">Unlimited Earning Potential</div>
+                <div class="benefit-desc">There’s no cap on your earnings. The more you refer, the more you make—every single day.</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-title">Full Transparency</div>
+                <div class="benefit-desc">Track your referrals, earnings, and payouts in real time from your dashboard. No hidden fees, no surprises.</div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="section-title">Who Can Join?</div>
+        <div class="section-subtitle">Anyone with a passion for sharing and earning!</div>
+        <ul style="max-width:700px;margin:0 auto 32px auto;font-size:1.1em;color:#444;line-height:1.7;">
+            <li>Influencers, bloggers, and content creators</li>
+            <li>Entrepreneurs and business owners</li>
+            <li>Students, freelancers, and side hustlers</li>
+            <li>Anyone looking for a new way to earn daily income</li>
+        </ul>
+        <div style="text-align:center;margin-bottom:32px;">
+            <a href="/" style="background:#e60000;color:#fff;padding:14px 32px;border-radius:8px;font-size:1.15em;font-weight:700;text-decoration:none;box-shadow:0 2px 8px rgba(230,0,0,0.08);">Get Started Now</a>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-links">
+            <div class="footer-section">
+                <h5>Product</h5>
+                <a href="/packages">Hosting Packages</a>
+                <a href="/api-docs">API Docs</a>
+                <a href="/affiliate-program">Affiliate Program</a>
+            </div>
+            <div class="footer-section">
+                <h5>Company</h5>
+                <a href="/blog">Blog</a>
+                <a href="mailto:support@seobrainai.com">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h5>Legal</h5>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/user-agreement">User Agreement</a>
+                <a href="/cookie-policy">Cookie Policy</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            &copy; 2026 HostingPro. All rights reserved.
+        </div>
+    </div>
 </body>
 </html>

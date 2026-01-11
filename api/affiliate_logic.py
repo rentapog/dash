@@ -1,5 +1,5 @@
 # --- Referral Assignment Logic (to use in your registration/signup flow) ---
-from .models import User, db
+from models import User, db
 
 ADMIN_USERNAME = 'seobrain'
 
@@ -18,7 +18,7 @@ def assign_referral(new_user, affiliate):
     db.session.commit()
 
 # --- Daily Payment Scheduler Logic (to run once per day, e.g. with APScheduler or cron) ---
-from .paypal import create_paypal_order
+from paypal import create_paypal_order
 
 def trigger_daily_payments():
     affiliates = User.query.filter(User.is_active == True).all()
