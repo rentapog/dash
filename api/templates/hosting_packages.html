@@ -1,119 +1,632 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>SEOBRAIN Hosting Packages | Earn Daily Payouts</title>
-    {% include '_tiktok_pixel.html' %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HostingPro | Get Paid Daily</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; color: #222; margin: 0; padding: 0; }
-        .container { max-width: 1000px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.10); padding: 40px; border: 3px solid #1a237e; }
-        h1, h2, h3 { color: #d32f2f; }
-        h1 { font-size: 2.5em; margin-bottom: 18px; }
-        h2 { font-size: 1.5em; margin-top: 32px; }
-        .nav { background: #1976d2; padding: 16px 0; text-align: center; }
-        .nav a { color: #fff; margin: 0 18px; font-weight: bold; text-decoration: none; font-size: 1.1em; }
-        .nav a:hover { color: #d32f2f; }
-        .packages { display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; margin: 40px 0; }
-        .package-card { background: #fff; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border: 2px solid #1976d2; padding: 32px 28px; text-align: center; width: 300px; position: relative; }
-        .package-card.featured { border: 3px solid #d32f2f; box-shadow: 0 4px 18px rgba(211,47,47,0.10); }
-        .package-card h3 { color: #d32f2f; font-size: 1.3em; margin-bottom: 12px; }
-        .package-card .storage { color: #1976d2; font-weight: bold; font-size: 1.1em; margin-bottom: 8px; }
-        .package-card .price { color: #222; font-size: 1.2em; margin-bottom: 12px; }
-        .package-card .earnings { color: #388e3c; font-weight: bold; margin-bottom: 10px; }
-        .package-card .upgrade { background: #1976d2; color: #fff; border: none; border-radius: 8px; padding: 10px 24px; font-size: 1em; font-weight: bold; cursor: pointer; margin-top: 12px; transition: background 0.2s; }
-        .package-card .upgrade:hover { background: #d32f2f; }
-        .explanation { background: #e3f2fd; border-left: 6px solid #d32f2f; padding: 18px 24px; margin-bottom: 28px; border-radius: 8px; color: #222; font-size: 1.15em; }
-        .admin-info { background: #fff3e0; border-left: 6px solid #1976d2; padding: 16px 22px; margin-bottom: 24px; border-radius: 8px; color: #222; font-size: 1.08em; }
-        footer { background: #d32f2f; color: #fff; text-align: center; padding: 18px 0; margin-top: 40px; font-size: 1.1em; }
+        body {
+            background: #f8fafc;
+            color: #222;
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+        }
+
+        .navbar {
+            background: #fff;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            padding: 0 32px;
+            height: 64px;
+        }
+
+        .navbar-logo {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #e60000;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-links {
+            margin-left: auto;
+            display: flex;
+            gap: 32px;
+        }
+
+        .navbar-links a {
+            color: #222;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1em;
+            padding: 8px 0;
+        }
+
+        .navbar-links a:hover {
+            color: #e60000;
+        }
+
+        .ticker-bar {
+            background: #10182b;
+            color: #fff;
+            padding: 8px 0;
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            font-size: 1.1em;
+        }
+
+        .ticker-item {
+            display: inline-block;
+            margin: 0 18px;
+            background: #19213a;
+            border-radius: 8px;
+            padding: 4px 16px;
+            font-weight: 600;
+        }
+
+        .hero-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 48px auto 0 auto;
+            padding: 0 32px;
+        }
+
+        .hero-left {
+            flex: 1;
+        }
+
+        .hero-badge {
+            background: #e6f9ef;
+            color: #1db954;
+            font-weight: 600;
+            border-radius: 6px;
+            display: inline-block;
+            padding: 8px 18px;
+            margin-bottom: 24px;
+            font-size: 1em;
+        }
+
+        .hero-title {
+            font-size: 3.2em;
+            font-weight: 800;
+            color: #10182b;
+            margin-bottom: 12px;
+            line-height: 1.1;
+        }
+
+        .hero-title .highlight {
+            color: #e60000;
+        }
+
+        .hero-desc {
+            font-size: 1.3em;
+            color: #444;
+            margin-bottom: 32px;
+        }
+
+        .hero-form-card {
+            background: #fff;
+            box-shadow: 0 8px 32px rgba(16, 24, 43, 0.10);
+            border-radius: 18px;
+            padding: 36px 32px;
+            width: 400px;
+            max-width: 100%;
+            margin-left: 48px;
+        }
+
+        .form-badge {
+            background: #ff4d4f;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 6px;
+            display: inline-block;
+            padding: 6px 16px;
+            margin-bottom: 18px;
+            font-size: 1em;
+        }
+
+        .form-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #10182b;
+        }
+
+        .form-desc {
+            color: #444;
+            margin-bottom: 18px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            margin-top: 12px;
+            display: block;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1.5px solid #e5e7eb;
+            font-size: 1em;
+            margin-bottom: 12px;
+        }
+
+        .form-btn {
+            width: 100%;
+            background: #10182b;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 14px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .form-btn:hover {
+            background: #e60000;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 48px;
+            max-width: 1500px;
+            margin: 70px auto 70px auto;
+            padding: 0 32px;
+        }
+
+        .package-card {
+            background: linear-gradient(135deg, #fff 80%, #f7f7ff 100%);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0, 31, 91, 0.18), 0 2px 8px rgba(230, 0, 0, 0.08);
+            border: 3.5px solid #e60000;
+            padding: 44px 32px 38px 32px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.35s, box-shadow 0.35s;
+            margin-bottom: 24px;
+        }
+
+        .package-card:hover {
+            transform: translateY(-16px) scale(1.03);
+            box-shadow: 0 16px 48px rgba(0, 31, 91, 0.22), 0 4px 16px rgba(230, 0, 0, 0.12);
+            z-index: 2;
+        }
+
+        .package-card .badge {
+            position: absolute;
+            top: -22px;
+            right: 32px;
+            background: linear-gradient(90deg, #ffd700 70%, #fffbe6 100%);
+            color: #001f5b;
+            padding: 14px 28px;
+            border-radius: 32px;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+            border: 2px solid #e60000;
+        }
+
+        .package-card h3 {
+            font-size: 2.2em;
+            color: #001f5b;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+        }
+
+        .package-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 32px 0 0 0;
+            text-align: left;
+        }
+
+        .package-card li {
+            padding: 14px 0;
+            border-bottom: 1.5px solid #f2f2f2;
+            font-size: 1.08em;
+        }
+
+        .package-card li:before {
+            content: "✓ ";
+            color: #e60000;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.1em;
+        }
+
+        .footer {
+            background: linear-gradient(90deg, #e60000 0%, #fff 50%, #001f5b 100%);
+            color: #001f5b;
+            padding: 38px 0 18px 0;
+            margin-top: 60px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-bottom: 18px;
+        }
+
+        .footer-section {
+            min-width: 180px;
+        }
+
+        .footer-section h5 {
+            color: #e60000;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #001f5b;
+            text-decoration: underline;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .footer-section a:hover {
+            color: #e60000;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            color: #001f5b;
+            font-size: 0.98em;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 60px auto 0 auto;
+            padding: 0 32px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2em;
+            font-weight: 800;
+            color: #10182b;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #444;
+            margin-bottom: 36px;
+        }
+
+        .steps-grid {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .step-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(16, 24, 43, 0.08);
+            padding: 32px 28px;
+            flex: 1 1 280px;
+            min-width: 260px;
+            max-width: 340px;
+            text-align: center;
+        }
+
+        .step-icon {
+            font-size: 2.2em;
+            margin-bottom: 12px;
+            color: #1db954;
+        }
+
+        .step-title {
+            font-size: 1.25em;
+            font-weight: 700;
+            color: #10182b;
+            margin-bottom: 8px;
+        }
+
+        .step-desc {
+            color: #444;
+            font-size: 1.05em;
+        }
+
+        .benefits-grid {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 32px;
+        }
+
+        .benefit-card {
+            background: #e6f9ef;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(16, 24, 43, 0.06);
+            padding: 28px 24px;
+            flex: 1 1 260px;
+            min-width: 220px;
+            max-width: 340px;
+            text-align: center;
+            color: #10182b;
+        }
+
+        .benefit-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1db954;
+        }
+
+        .benefit-desc {
+            font-size: 1em;
+            color: #444;
+        }
+
+        @media (max-width: 900px) {
+            .hero-section {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-form-card {
+                margin-left: 0;
+                margin-top: 32px;
+            }
+
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-grid,
+            .benefits-grid {
+                flex-direction: column;
+                gap: 24px;
+            }
+        }
     </style>
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id={{ paypal_client_id }}&currency=AUD"></script>
 </head>
+
 <body>
-    <div class="nav">
-        <a href="/">Home</a>
-        <a href="/hosting">Hosting Packages</a>
-        <a href="/affiliate_program">Affiliate Program</a>
-        <a href="/contact">Contact</a>
-    </div>
-    <div class="container">
-        <h1>Choose Your Hosting Package</h1>
-        <div class="explanation">
-            <strong>Earn Daily Payouts:</strong> After you refer 3 paid customers, you unlock <span style="color:#388e3c;font-weight:bold;">daily PayPal payouts</span> for every active referral. The more you upgrade, the more you earn and the more features you unlock!<br><br>
-            <span style="color:#d32f2f;font-weight:bold;">TikTok Ad Bonus:</span> When you join the Starter package, half of your first payment ($10) will be used for a one-time TikTok ad campaign to promote your site using our TikTok Pixel. This is a unique, one-time bonus to help you get your first referrals fast!
-        </div>
-        <div class="admin-info">
-            <strong>How It Works:</strong> The admin receives the <span style="color:#d32f2f;font-weight:bold;">second sale</span> from every user. You keep all other sales and daily commissions from your referrals. The first payment from each referral covers their own fees. Once you have 3 paid referrals, you earn the full daily package amount for every referral—upgrade your package to increase your daily payout!<br><br>
-            <span style="color:#1976d2;font-weight:bold;">All bonuses and ad campaigns are powered by TikTok, not Facebook.</span>
-        </div>
-        <div class="packages">
-            <div class="package-card featured">
-                <h3>Starter</h3>
-                <div class="storage">10 GB SSD Storage</div>
-                <div class="price">$20/month</div>
-                <div class="earnings">Earn up to $20/day per referral after 3 referrals</div>
-                <div style="color:#d32f2f;font-weight:bold;margin-bottom:8px;">Bonus: $10 TikTok ad campaign (one-time)</div>
-                <button class="upgrade">Get Started</button>
-            </div>
-            <div class="package-card">
-                <h3>Basic</h3>
-                <div class="storage">25 GB SSD Storage</div>
-                <div class="price">$49/month</div>
-                <div class="earnings">Earn up to $49/day per referral after 3 referrals</div>
-                <div style="color:#d32f2f;font-weight:bold;margin-bottom:8px;">Bonus: $25 TikTok ad campaign (one-time) + exclusive digital guide</div>
-                <button class="upgrade">Upgrade</button>
-            </div>
-            <div class="package-card">
-                <h3>Pro</h3>
-                <div class="storage">50 GB SSD Storage</div>
-                <div class="price">$99/month</div>
-                <div class="earnings">Earn up to $99/day per referral after 3 referrals</div>
-                <div style="color:#d32f2f;font-weight:bold;margin-bottom:8px;">Bonus: $50 TikTok ad campaign (one-time) + premium support</div>
-                <button class="upgrade">Upgrade</button>
-            </div>
-            <div class="package-card">
-                <h3>Elite</h3>
-                <div class="storage">100 GB SSD Storage</div>
-                <div class="price">$299/month</div>
-                <div class="earnings">Earn up to $299/day per referral after 3 referrals</div>
-                <div style="color:#d32f2f;font-weight:bold;margin-bottom:8px;">Bonus: $150 TikTok ad campaign (one-time) + featured listing</div>
-                <button class="upgrade">Upgrade</button>
-            </div>
-            <div class="package-card">
-                <h3>Empire</h3>
-                <div class="storage">250 GB SSD Storage</div>
-                <div class="price">$499/month</div>
-                <div class="earnings">Earn up to $499/day per referral after 3 referrals</div>
-                <div style="color:#d32f2f;font-weight:bold;margin-bottom:8px;">Bonus: $250 TikTok ad campaign (one-time) + 1-on-1 strategy call</div>
-                <button class="upgrade">Upgrade</button>
-            </div>
-            <div class="package-card">
-                <h3>Ultra</h3>
-                <div class="storage">1 TB SSD Storage</div>
-                <div class="price">$999/month</div>
-                <div class="earnings">Earn up to $999/day per referral after 3 referrals</div>
-                <div style="color:#d32f2f;font-weight:bold;margin-bottom:8px;">Bonus: $500 TikTok ad campaign (one-time) + VIP mastermind access</div>
-                <button class="upgrade">Upgrade</button>
-            </div>
-        </div>
-        <div style="margin-top:32px;text-align:center;">
-            <a href="/register" class="upgrade" style="font-size:1.2em;padding:16px 38px;">Become a Member & Start Earning</a>
+    <div class="navbar">
+        <span class="navbar-logo"> <img src="https://img.icons8.com/ios-filled/50/e60000/record.png" alt="logo"
+                style="height:28px;vertical-align:middle;margin-right:8px;"> HostingPro</span>
+        <div class="navbar-links">
+            <a href="/">Home</a>
+            <a href="/how-it-works">How It Works</a>
+            <a href="/affiliate-program">Affiliate Program</a>
         </div>
     </div>
-    <footer>
-        <div style="max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:48px;">
-            <div>
-                <h5 style="color:#fff;">Legal</h5>
-                <a href="/privacy-policy" style="color:#fff;text-decoration:underline;">Privacy Policy</a>
-                <a href="/terms" style="color:#fff;text-decoration:underline;">Terms & Conditions</a>
-                <a href="/earnings-disclaimer" style="color:#fff;text-decoration:underline;">Earnings Disclaimer</a>
-                <a href="/user-agreement" style="color:#fff;text-decoration:underline;">User Agreement</a>
-                <a href="/cookie-policy" style="color:#fff;text-decoration:underline;">Cookie Policy</a>
-            </div>
-            <div>
-                <h5 style="color:#fff;">Account</h5>
-                <a href="/login" style="color:#fff;text-decoration:underline;">Login</a>
+    <div class="ticker-bar">
+        <span class="ticker-item">✨ Hannah Dubois <b>$399</b></span>
+        <span class="ticker-item">✨ Mateo Silva <b>$99</b></span>
+        <span class="ticker-item">✨ Priya Garcia <b>$349</b></span>
+        <span class="ticker-item">✨ Elijah King <b>$499</b></span>
+        <span class="ticker-item">✨ Owen Khan <b>$49</b></span>
+        <span class="ticker-item">✨ Ruby Kim <b>$149</b></span>
+        <span class="ticker-item">✨ Sam Smith <b>$99</b></span>
+        <span class="ticker-item">✨ Aisha Patel <b>$259</b></span>
+        <span class="ticker-item">✨ Lucas Brown <b>$199</b></span>
+        <span class="ticker-item">✨ Emily Chen <b>$129</b></span>
+        <span class="ticker-item">✨ Diego Torres <b>$179</b></span>
+        <span class="ticker-item">✨ Sofia Rossi <b>$299</b></span>
+        <span class="ticker-item">✨ Marcus Lee <b>$89</b></span>
+        <span class="ticker-item">✨ Chloe Martin <b>$159</b></span>
+        <span class="ticker-item">✨ Ahmed Nasser <b>$189</b></span>
+        <span class="ticker-item">✨ Isabella Cruz <b>$209</b></span>
+        <span class="ticker-item">✨ Ethan Clark <b>$139</b></span>
+        <span class="ticker-item">✨ Zoe Kim <b>$179</b></span>
+        <span class="ticker-item">✨ William Evans <b>$229</b></span>
+        <span class="ticker-item">✨ Mia Lopez <b>$119</b></span>
+    </div>
+    <div class="hero-section">
+        <div class="hero-left">
+            <div class="hero-badge">RentAPog - No Risk, Cancel Anytime</div>
+            <div class="hero-title">Rent A Pog.<br><span class="highlight">Get Paid Daily.</span></div>
+            <div class="hero-desc">The world's first daily-pay pog rental platform. Earn daily, withdraw instantly, no
+                risk, cancel anytime!</div>
+        </div>
+        <div class="hero-form-card">
+            <div class="form-badge">Limited Time</div>
+            <div class="form-title">Start Earning Daily</div>
+            <div class="form-desc">Get your affiliate link and start earning immediately.</div>
+            <div
+                style="background:#f5f7fa;border-radius:6px;padding:8px 12px;margin-bottom:12px;color:#1976d2;font-size:0.98em;">
+                Referred by: <a href="#" style="color:#1976d2;text-decoration:underline;">rentapog</a></div>
+            <form>
+                <label class="form-label">Your First Name</label>
+                <input class="form-input" type="text" placeholder="John">
+                <label class="form-label">Your Email</label>
+                <input class="form-input" type="email" placeholder="you@example.com">
+                <button class="form-btn" type="submit">Create Account &amp; Get My Affiliate Link</button>
+            </form>
+            <div style="margin-top:10px;font-size:0.95em;color:#888;">No credit card required. Start earning instantly.
             </div>
         </div>
-        <div style="margin-top:18px;">&copy; 2026 SEOBRAIN Hosting. Red, White & Blue. All rights reserved.</div>
-    </footer>
+    </div>
+
+    <!-- Passive Income Steps Section -->
+    <div class="section">
+        <div class="section-title">Your Path to Passive Income</div>
+        <div class="section-subtitle">Get started in minutes. Earn every single day. It's that simple.</div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-icon">1️⃣</div>
+                <div class="step-title">Select Your Pog</div>
+                <div class="step-desc">Choose your preferred rental package and activate your account. No risk, cancel
+                    anytime.</div>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">2️⃣</div>
+                <div class="step-title">Earn Daily</div>
+                <div class="step-desc">Share your affiliate link and earn daily payouts for every active referral.
+                    Withdraw instantly, no waiting.</div>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">3️⃣</div>
+                <div class="step-title">Scale & Grow</div>
+                <div class="step-desc">Upgrade your package, refer more users, and unlock even bigger rewards. The more
+                    you grow, the more you earn!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits/Info Cards Section (no trial references) -->
+    <div class="section">
+        <div class="section-title" style="color:#1db954;">Why Choose HostingPro?</div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-title">Instant Daily Payouts</div>
+                <div class="benefit-desc">Get paid every single day for your active referrals. Withdraw your earnings
+                    instantly, anytime.</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-title">No Long-Term Contracts</div>
+                <div class="benefit-desc">Stay as long as you like. Cancel anytime—no hidden fees, no penalties, just
+                    pure earning power.</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-title">Fair Pay for Success</div>
+                <div class="benefit-desc">You keep 100% of your daily earnings after your first 3 referrals. Our system
+                    is designed for your long-term success.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Posts Section (moved up) -->
+    <div class="section">
+        <div class="section-title">Latest Blog Posts</div>
+        <div class="section-subtitle">Tips, strategies, and insights to help you maximize your earnings</div>
+        <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+            <div
+                style="background:#fff;border-radius:16px;box-shadow:0 2px 12px rgba(16,24,43,0.08);padding:28px 24px;min-width:260px;max-width:340px;flex:1 1 260px;">
+                <div style="font-size:0.95em;color:#1db954;font-weight:600;margin-bottom:6px;">Guide &nbsp;|&nbsp; Dec
+                    1, 2025</div>
+                <div style="font-size:1.15em;font-weight:700;margin-bottom:10px;">Getting Started with Daily Payouts
+                </div>
+                <div style="color:#444;font-size:1em;margin-bottom:12px;">Learn how to maximize your earnings with our
+                    daily payout system and get paid instantly.</div>
+                <a href="#" style="color:#1976d2;text-decoration:underline;font-size:0.98em;">Read More &rarr;</a>
+            </div>
+            <div
+                style="background:#fff;border-radius:16px;box-shadow:0 2px 12px rgba(16,24,43,0.08);padding:28px 24px;min-width:260px;max-width:340px;flex:1 1 260px;">
+                <div style="font-size:0.95em;color:#ffb300;font-weight:600;margin-bottom:6px;">Education &nbsp;|&nbsp;
+                    Nov 28, 2025</div>
+                <div style="font-size:1.15em;font-weight:700;margin-bottom:10px;">Understanding the Fair Affiliate
+                    System</div>
+                <div style="color:#444;font-size:1em;margin-bottom:12px;">How our 2nd sale pay-up keeps the platform
+                    sustainable for everyone.</div>
+                <a href="#" style="color:#1976d2;text-decoration:underline;font-size:0.98em;">Read More &rarr;</a>
+            </div>
+            <div
+                style="background:#fff;border-radius:16px;box-shadow:0 2px 12px rgba(16,24,43,0.08);padding:28px 24px;min-width:260px;max-width:340px;flex:1 1 260px;">
+                <div style="font-size:0.95em;color:#1976d2;font-weight:600;margin-bottom:6px;">Strategy &nbsp;|&nbsp;
+                    Nov 25, 2025</div>
+                <div style="font-size:1.15em;font-weight:700;margin-bottom:10px;">Top Strategies for Affiliate Success
+                </div>
+                <div style="color:#444;font-size:1em;margin-bottom:12px;">Tips from top earners on how to scale your
+                    referral income.</div>
+                <a href="#" style="color:#1976d2;text-decoration:underline;font-size:0.98em;">Read More &rarr;</a>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:10px;">
+            <a href="#" style="color:#10182b;font-weight:600;text-decoration:underline;font-size:1.05em;">View All
+                Articles &rarr;</a>
+        </div>
+    </div>
+    <div class="packages-grid">
+        {% set packages = [
+        {'name': 'Starter', 'price': 20, 'desc': '10 GB SSD Storage – Perfect for new sites, blogs, or landing pages'},
+        {'name': 'Basic', 'price': 49, 'desc': '25 GB SSD Storage – Ideal for growing businesses and content creators'},
+        {'name': 'Pro', 'price': 99, 'desc': '50 GB SSD Storage – For high-traffic sites and eCommerce'},
+        {'name': 'Elite', 'price': 299, 'desc': '100 GB SSD Storage – For agencies and large businesses'},
+        {'name': 'Empire', 'price': 499, 'desc': '250 GB SSD Storage – Ultimate power for enterprise and high-volume
+        sites'}
+        ] %}
+        {% for pkg in packages %}
+        <div class="package-card">
+            <div class="badge">{{ pkg.name }}</div>
+            <h3>{{ pkg.name }}</h3>
+            <ul>
+                <li>{{ pkg.desc }}</li>
+                <!-- ...add more features as needed... -->
+            </ul>
+            <div class="price" style="font-size:1.3em;margin:18px 0;">${{ pkg.price }}/month</div>
+            <div id="paypal-button-container-{{ loop.index }}"></div>
+        </div>
+        {% endfor %}
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var packages = [
+                { name: 'Starter', price: 20 },
+                { name: 'Basic', price: 49 },
+                { name: 'Pro', price: 99 },
+                { name: 'Elite', price: 299 },
+                { name: 'Empire', price: 499 }
+            ];
+            var affiliate_id = "{{ affiliate_id|default('') }}";
+            if (window.paypal) {
+                packages.forEach(function (pkg, idx) {
+                    paypal.Buttons({
+                        createOrder: function (data, actions) {
+                            return actions.order.create({
+                                purchase_units: [{
+                                    amount: { value: pkg.price.toString(), currency_code: 'AUD' },
+                                    custom_id: affiliate_id + '-' + pkg.name
+                                }]
+                            });
+                        },
+                        onApprove: function (data, actions) {
+                            return actions.order.capture().then(function (details) {
+                                alert("Payment completed by " + details.payer.name.given_name + "!");
+                            });
+                        }
+                    }).render('#paypal-button-container-' + (idx + 1));
+                });
+            }
+        });
+    </script>
+    <!-- ...rest of your HTML unchanged... -->
+    <div class="footer">
+        <div class="footer-links">
+            <div class="footer-section">
+                <h5>Product</h5>
+                <a href="/packages">Hosting Packages</a>
+                <a href="/api-docs">API Docs</a>
+                <a href="/affiliate-program">Affiliate Program</a>
+            </div>
+            <div class="footer-section">
+                <h5>Company</h5>
+                <a href="/blog">Blog</a>
+                <a href="/careers">Careers</a>
+                <a href="mailto:support@seobrainai.com">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h5>Legal</h5>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/user-agreement">User Agreement</a>
+                <a href="/cookie-policy">Cookie Policy</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            &copy; 2026 HostingPro. All rights reserved.
+        </div>
+    </div>
 </body>
+
 </html>
