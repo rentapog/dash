@@ -6,13 +6,37 @@
     <title>HostingPro | Get Paid Daily</title>
     <style>
         body { background: #f8fafc; color: #222; font-family: 'Inter', 'Segoe UI', Arial, sans-serif; margin: 0; }
-        .navbar { background: #fff; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; padding: 0 32px; height: 64px; }
+        .navbar { background: #101010; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; padding: 0 32px; height: 64px; }
         .navbar-logo { font-weight: bold; font-size: 1.5em; color: #e60000; display: flex; align-items: center; }
         .navbar-links { margin-left: auto; display: flex; gap: 32px; }
-        .navbar-links a { color: #222; text-decoration: none; font-weight: 500; font-size: 1.1em; padding: 8px 0; }
+        .navbar-links a { color: #fff; text-decoration: none; font-weight: 500; font-size: 1.1em; padding: 8px 0; }
         .navbar-links a:hover { color: #e60000; }
-        .ticker-bar { background: #10182b; color: #fff; padding: 8px 0; display: flex; overflow-x: auto; white-space: nowrap; font-size: 1.1em; }
-        .ticker-item { display: inline-block; margin: 0 18px; background: #19213a; border-radius: 8px; padding: 4px 16px; font-weight: 600; }
+        .ticker-bar {
+            background: #10182b;
+            color: #fff;
+            padding: 8px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 1.1em;
+            position: relative;
+        }
+        .ticker-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: ticker-scroll 80s linear infinite;
+        }
+        @keyframes ticker-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        .ticker-item {
+            display: inline-block;
+            margin: 0 18px;
+            background: #19213a;
+            border-radius: 8px;
+            padding: 4px 16px;
+            font-weight: 600;
+        }
         .hero-section { display: flex; justify-content: space-between; align-items: flex-start; max-width: 1200px; margin: 48px auto 0 auto; padding: 0 32px; }
         .hero-left { flex: 1; }
         .hero-badge { background: #e6f9ef; color: #1db954; font-weight: 600; border-radius: 6px; display: inline-block; padding: 8px 18px; margin-bottom: 24px; font-size: 1em; }
@@ -220,28 +244,63 @@
             <a href="/affiliate-program">Affiliates</a>
         </div>
     </div>
-    <div class="ticker-bar">
-        <span class="ticker-item">✨ Hannah Dubois <b>$399</b></span>
-        <span class="ticker-item">✨ Mateo Silva <b>$99</b></span>
-        <span class="ticker-item">✨ Priya Garcia <b>$349</b></span>
-        <span class="ticker-item">✨ Elijah King <b>$499</b></span>
-        <span class="ticker-item">✨ Owen Khan <b>$49</b></span>
-        <span class="ticker-item">✨ Ruby Kim <b>$149</b></span>
-        <span class="ticker-item">✨ Sam Smith <b>$99</b></span>
-        <span class="ticker-item">✨ Aisha Patel <b>$259</b></span>
-        <span class="ticker-item">✨ Lucas Brown <b>$199</b></span>
-        <span class="ticker-item">✨ Emily Chen <b>$129</b></span>
-        <span class="ticker-item">✨ Diego Torres <b>$179</b></span>
-        <span class="ticker-item">✨ Sofia Rossi <b>$299</b></span>
-        <span class="ticker-item">✨ Marcus Lee <b>$89</b></span>
-        <span class="ticker-item">✨ Chloe Martin <b>$159</b></span>
-        <span class="ticker-item">✨ Ahmed Nasser <b>$189</b></span>
-        <span class="ticker-item">✨ Isabella Cruz <b>$209</b></span>
-        <span class="ticker-item">✨ Ethan Clark <b>$139</b></span>
-        <span class="ticker-item">✨ Zoe Kim <b>$179</b></span>
-        <span class="ticker-item">✨ William Evans <b>$229</b></span>
-        <span class="ticker-item">✨ Mia Lopez <b>$119</b></span>
-    </div>
+        <div class="ticker-bar">
+            <div class="ticker-content">
+                <span class="ticker-item">✨ pogTitan <b>$999</b></span>
+                <span class="ticker-item">✨ empirePro <b>$499</b></span>
+                <span class="ticker-item">✨ starterGuy <b>$20</b></span>
+                <span class="ticker-item">✨ basicQueen <b>$49</b></span>
+                <span class="ticker-item">✨ proMax <b>$99</b></span>
+                <span class="ticker-item">✨ eliteWolf <b>$299</b></span>
+                <span class="ticker-item">✨ titanMaster <b>$999</b></span>
+                <span class="ticker-item">✨ advancedHero <b>$199</b></span>
+                <span class="ticker-item">✨ titanLegend <b>$999</b></span>
+                <span class="ticker-item">✨ megaTitan <b>$999</b></span>
+                <span class="ticker-item">✨ empireKing <b>$499</b></span>
+                <span class="ticker-item">✨ proUser99 <b>$99</b></span>
+                <span class="ticker-item">✨ eliteStar <b>$299</b></span>
+                <span class="ticker-item">✨ titanElite <b>$999</b></span>
+                <span class="ticker-item">✨ starterAce <b>$20</b></span>
+                <span class="ticker-item">✨ basicChamp <b>$49</b></span>
+                <span class="ticker-item">✨ advancedGuru <b>$199</b></span>
+                <span class="ticker-item">✨ titanPower <b>$999</b></span>
+                <span class="ticker-item">✨ empireBoss <b>$499</b></span>
+                <span class="ticker-item">✨ proChamp <b>$99</b></span>
+                <span class="ticker-item">✨ eliteChamp <b>$299</b></span>
+                <span class="ticker-item">✨ titanForce <b>$999</b></span>
+                <span class="ticker-item">✨ starterPro <b>$20</b></span>
+                <span class="ticker-item">✨ basicHero <b>$49</b></span>
+                <span class="ticker-item">✨ advancedChamp <b>$199</b></span>
+                <span class="ticker-item">✨ titanChamp <b>$999</b></span>
+                <!-- Duplicate for seamless loop -->
+                <span class="ticker-item">✨ pogTitan <b>$999</b></span>
+                <span class="ticker-item">✨ empirePro <b>$499</b></span>
+                <span class="ticker-item">✨ starterGuy <b>$20</b></span>
+                <span class="ticker-item">✨ basicQueen <b>$49</b></span>
+                <span class="ticker-item">✨ proMax <b>$99</b></span>
+                <span class="ticker-item">✨ eliteWolf <b>$299</b></span>
+                <span class="ticker-item">✨ titanMaster <b>$999</b></span>
+                <span class="ticker-item">✨ advancedHero <b>$199</b></span>
+                <span class="ticker-item">✨ titanLegend <b>$999</b></span>
+                <span class="ticker-item">✨ megaTitan <b>$999</b></span>
+                <span class="ticker-item">✨ empireKing <b>$499</b></span>
+                <span class="ticker-item">✨ proUser99 <b>$99</b></span>
+                <span class="ticker-item">✨ eliteStar <b>$299</b></span>
+                <span class="ticker-item">✨ titanElite <b>$999</b></span>
+                <span class="ticker-item">✨ starterAce <b>$20</b></span>
+                <span class="ticker-item">✨ basicChamp <b>$49</b></span>
+                <span class="ticker-item">✨ advancedGuru <b>$199</b></span>
+                <span class="ticker-item">✨ titanPower <b>$999</b></span>
+                <span class="ticker-item">✨ empireBoss <b>$499</b></span>
+                <span class="ticker-item">✨ proChamp <b>$99</b></span>
+                <span class="ticker-item">✨ eliteChamp <b>$299</b></span>
+                <span class="ticker-item">✨ titanForce <b>$999</b></span>
+                <span class="ticker-item">✨ starterPro <b>$20</b></span>
+                <span class="ticker-item">✨ basicHero <b>$49</b></span>
+                <span class="ticker-item">✨ advancedChamp <b>$199</b></span>
+                <span class="ticker-item">✨ titanChamp <b>$999</b></span>
+            </div>
+        </div>
     <div class="hero-section">
         <div class="hero-left">
             <div class="hero-badge">RentAPog - No Risk, Cancel Anytime</div>
@@ -510,7 +569,7 @@
             <div class="footer-section">
                 <h5>Company</h5>
                 <a href="/blog">Blog</a>
-                <a href="mailto:support@seobrainai.com">Contact Us</a>
+                <a href="mailto:support@rentapog">Contact Us</a>
             </div>
             <div class="footer-section">
                 <h5>Legal</h5>

@@ -1,42 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How It Works | HostingPro</title>
     <style>
-        body { background: #f8fafc; color: #222; font-family: 'Inter', 'Segoe UI', Arial, sans-serif; margin: 0; }
-        .navbar { background: #fff; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; padding: 0 32px; height: 64px; }
-        .navbar-logo { font-weight: bold; font-size: 1.5em; color: #e60000; display: flex; align-items: center; }
-        .navbar-links { margin-left: auto; display: flex; gap: 32px; }
-        .navbar-links a { color: #222; text-decoration: none; font-weight: 500; font-size: 1.1em; padding: 8px 0; }
-        .navbar-links a:hover { color: #e60000; }
-        .hero-section { display: flex; flex-direction: column; align-items: center; justify-content: center; max-width: 900px; margin: 48px auto 0 auto; padding: 0 32px; }
-        .hero-badge { background: #e6f9ef; color: #1db954; font-weight: 600; border-radius: 6px; display: inline-block; padding: 8px 18px; margin-bottom: 24px; font-size: 1em; }
-        .hero-title { font-size: 2.8em; font-weight: 800; color: #10182b; margin-bottom: 12px; line-height: 1.1; text-align: center; }
-        .hero-title .highlight { color: #e60000; }
-        .hero-desc { font-size: 1.3em; color: #444; margin-bottom: 32px; text-align: center; }
-        .section { max-width: 900px; margin: 60px auto 0 auto; padding: 0 32px; }
-        .section-title { text-align: center; font-size: 2.2em; font-weight: 800; color: #10182b; margin-bottom: 10px; }
-        .section-subtitle { text-align: center; font-size: 1.2em; color: #444; margin-bottom: 36px; }
-        .steps-grid { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
-        .step-card { background: #fff; border-radius: 18px; box-shadow: 0 4px 24px rgba(16,24,43,0.08); padding: 32px 28px; flex: 1 1 280px; min-width: 260px; max-width: 340px; text-align: center; }
-        .step-icon { font-size: 2.2em; margin-bottom: 12px; color: #1db954; }
-        .step-title { font-size: 1.25em; font-weight: 700; color: #10182b; margin-bottom: 8px; }
-        .step-desc { color: #444; font-size: 1.05em; }
-        @media (max-width: 900px) { .hero-section { flex-direction: column; align-items: stretch; } .steps-grid { flex-direction: column; gap: 24px; } }
-        .footer { background: linear-gradient(90deg, #e60000 0%, #fff 50%, #001f5b 100%); color: #001f5b; padding: 38px 0 18px 0; margin-top: 60px; }
-        .footer-links { display: flex; justify-content: center; gap: 80px; margin-bottom: 18px; }
-        .footer-section { min-width: 180px; }
-        .footer-section h5 { color: #e60000; font-size: 1.1em; margin-bottom: 10px; }
-        .footer-section a { color: #001f5b; text-decoration: underline; display: block; margin-bottom: 6px; }
-        .footer-section a:hover { color: #e60000; }
-        .footer-copyright { text-align: center; color: #001f5b; font-size: 0.98em; }
+                .footer {
+                    background: #101010;
+                    color: #fff;
+                    padding: 38px 0 18px 0;
+                    margin-top: 60px;
+                    width: 100vw;
+                    position: relative;
+                    left: 50%;
+                    right: 50%;
+                    margin-left: -50vw;
+                    margin-right: -50vw;
+                }
+                .footer-links {
+                    display: flex;
+                    justify-content: center;
+                    gap: 80px;
+                    margin-bottom: 18px;
+                }
+                .footer-section {
+                    min-width: 180px;
+                }
+                .footer-section h5 {
+                    color: #fff;
+                    font-size: 1.1em;
+                    margin-bottom: 10px;
+                }
+                .footer-section a {
+                    color: #fff;
+                    text-decoration: underline;
+                    display: block;
+                    margin-bottom: 6px;
+                }
+                .footer-section a:hover {
+                    color: #e60000;
+                }
+                .footer-copyright {
+                    text-align: center;
+                    color: #fff;
+                    font-size: 0.98em;
+                }
+        body {
+            background: #f8fafc;
+            color: #222;
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+        }
+
+        .navbar {
+            background: #fff;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            padding: 0 32px;
+            height: 64px;
+        }
+
+        .navbar-logo {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #e60000;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-links {
+            margin-left: auto;
+            display: flex;
+            gap: 32px;
+        }
+
+        .navbar-links a {
+            color: #222;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1em;
+            padding: 8px 0;
+        }
+
+        .navbar-links a:hover {
+            color: #e60000;
+        }
+
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 900px;
+            margin: 48px auto 0 auto;
+            padding: 0 32px;
+        }
+
+        .hero-badge {
+            background: #e6f9ef;
+            color: #1db954;
+            font-weight: 600;
+            border-radius: 6px;
+            display: inline-block;
+            padding: 8px 18px;
+            margin-bottom: 24px;
+            font-size: 1em;
+        }
+
+        .hero-title {
+            font-size: 2.8em;
+            font-weight: 800;
+            color: #10182b;
+            margin-bottom: 12px;
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        .hero-title .highlight {
+            color: #e60000;
+        }
+
+        .hero-desc {
+            font-size: 1.3em;
+            color: #444;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .section {
+            max-width: 900px;
+            margin: 60px auto 0 auto;
+            padding: 0 32px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2em;
+            font-weight: 800;
+            color: #10182b;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #444;
+            margin-bottom: 36px;
+        }
+
+        .steps-grid {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .step-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(16, 24, 43, 0.08);
+            padding: 32px 28px;
+            flex: 1 1 280px;
+            min-width: 260px;
+            max-width: 340px;
+            text-align: center;
+        }
+
+        .step-icon {
+            font-size: 2.2em;
+            margin-bottom: 12px;
+            color: #1db954;
+        }
+
+        .step-title {
+            font-size: 1.25em;
+            font-weight: 700;
+            color: #10182b;
+            margin-bottom: 8px;
+        }
+
+        .step-desc {
+            color: #444;
+            font-size: 1.05em;
+        }
+
+        @media (max-width: 900px) {
+            .hero-section {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .steps-grid {
+                flex-direction: column;
+                gap: 24px;
+            }
+        }
+
+        .footer {
+            background: #101010;
+            color: #fff;
+            padding: 38px 0 18px 0;
+            margin-top: 60px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-bottom: 18px;
+        }
+
+        .footer-section {
+            min-width: 180px;
+        }
+
+        .footer-section h5 {
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: underline;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .footer-section a:hover {
+            color: #e60000;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            color: #fff;
+            font-size: 0.98em;
+        }
     </style>
 </head>
+
 <body>
     <div class="navbar">
-        <span class="navbar-logo"> <img src="https://img.icons8.com/ios-filled/50/e60000/record.png" alt="logo" style="height:28px;vertical-align:middle;margin-right:8px;"> HostingPro</span>
+        <span class="navbar-logo"> <img src="https://img.icons8.com/ios-filled/50/e60000/record.png" alt="logo"
+                style="height:28px;vertical-align:middle;margin-right:8px;"> HostingPro</span>
         <div class="navbar-links">
             <a href="/">Home</a>
             <a href="/how-it-works">How It Works</a>
@@ -47,7 +258,8 @@
     <div class="hero-section">
         <div class="hero-badge">Simple. Fast. Profitable.</div>
         <div class="hero-title">How <span class="highlight">HostingPro</span> Works</div>
-        <div class="hero-desc">Discover how you can start earning daily with our unique hosting and affiliate platform. It's easy to get started and even easier to grow!</div>
+        <div class="hero-desc">Discover how you can start earning daily with our unique hosting and affiliate platform.
+            It's easy to get started and even easier to grow!</div>
     </div>
     <div class="section">
         <div class="section-title">3 Steps to Daily Earnings</div>
@@ -55,44 +267,46 @@
             <div class="step-card">
                 <div class="step-icon">1️⃣</div>
                 <div class="step-title">Choose Your Package</div>
-                <div class="step-desc">Select the hosting package that fits your needs and activate your account. No risk, cancel anytime.</div>
+                <div class="step-desc">Select the hosting package that fits your needs and activate your account. No
+                    risk, cancel anytime.</div>
             </div>
             <div class="step-card">
                 <div class="step-icon">2️⃣</div>
                 <div class="step-title">Share & Refer</div>
-                <div class="step-desc">Share your affiliate link with friends, followers, or your audience. Every new user who signs up and activates a package through your link counts as your referral.</div>
+                <div class="step-desc">Share your affiliate link with friends, followers, or your audience. Every new
+                    user who signs up and activates a package through your link counts as your referral.</div>
             </div>
             <div class="step-card">
                 <div class="step-icon">3️⃣</div>
                 <div class="step-title">Earn Daily Payouts</div>
-                <div class="step-desc">Once you have 3 active referrals, you unlock daily payouts. Withdraw your earnings instantly—no minimums, no delays.</div>
+                <div class="step-desc">Once you have 3 active referrals, you unlock daily payouts. Withdraw your
+                    earnings instantly—no minimums, no delays.</div>
             </div>
         </div>
-    </div>
-    <div class="footer">
-        <div class="footer-links">
-            <div class="footer-section">
-                <h5>Product</h5>
-                <a href="/packages">Hosting Packages</a>
-                <a href="/api-docs">API Docs</a>
-                <a href="/affiliate-program">Affiliate Program</a>
+        <div class="footer">
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h5>Product</h5>
+                    <a href="/packages">Hosting Packages</a>
+                    <a href="/api-docs">API Docs</a>
+                    <a href="/affiliate-program">Affiliate Program</a>
+                </div>
+                <div class="footer-section">
+                    <h5>Company</h5>
+                    <a href="/blog">Blog</a>
+                    <a href="mailto:support@rentapog">Contact Us</a>
+                </div>
+                <div class="footer-section">
+                    <h5>Legal</h5>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms">Terms of Service</a>
+                    <a href="/user-agreement">User Agreement</a>
+                    <a href="/cookie-policy">Cookie Policy</a>
+                </div>
             </div>
-            <div class="footer-section">
-                <h5>Company</h5>
-                <a href="/blog">Blog</a>
-                <a href="mailto:support@seobrainai.com">Contact Us</a>
-            </div>
-            <div class="footer-section">
-                <h5>Legal</h5>
-                <a href="/privacy-policy">Privacy Policy</a>
-                <a href="/terms">Terms of Service</a>
-                <a href="/user-agreement">User Agreement</a>
-                <a href="/cookie-policy">Cookie Policy</a>
+            <div class="footer-copyright">
+                &copy; 2026 HostingPro. All rights reserved.
             </div>
         </div>
-        <div class="footer-copyright">
-            &copy; 2026 HostingPro. All rights reserved.
-        </div>
-    </div>
 </body>
 </html>
